@@ -1,0 +1,60 @@
+LUMEN PDF — leitor leve de PDF
+==============================
+
+O que tem
+---------
+- Leitor de página única: renderiza a página atual para evitar carregar o documento inteiro em imagens grandes.
+- Miniaturas de páginas sob demanda e cache curto para reduzir o uso de memória.
+- Navegação por número, página anterior/próxima e sumário do PDF.
+- Busca de texto no documento, com navegação pelos resultados.
+- Seleção retangular de texto e cópia para a área de transferência.
+- Realce colorido, sublinhado, tachado e desenho à mão livre.
+- Comentários tipo nota adesiva.
+- Marcadores que são gravados no sumário interno do PDF.
+- Lista de marcações com navegação e exclusão.
+- Desfazer a última marcação criada durante a sessão.
+- Exportação do texto do PDF para TXT e relatório de anotações para TXT.
+- Interface em português e tema escuro.
+- Processamento local; nenhum PDF é enviado à internet.
+
+Requisitos
+----------
+- Windows 10 ou 11.
+- Python 3.10 ou mais recente, com Tcl/Tk (a opção padrão do instalador oficial do Python).
+- Conexão com a internet para instalar as dependências na primeira execução.
+
+Como executar
+-------------
+1. Extraia a pasta LumenPDF para um local de sua preferência.
+2. Instale Python 3 pelo site oficial https://www.python.org/downloads/windows/ se ainda não estiver instalado.
+   Durante a instalação, mantenha o suporte ao Tcl/Tk e, de preferência, marque Add Python to PATH.
+3. Dê dois cliques em instalar_e_abrir.bat. Ele instala PyMuPDF e Pillow e abre o programa.
+4. Nas próximas vezes, use abrir.bat.
+
+Para gerar um executável
+------------------------
+Dê dois cliques em gerar_exe_windows.bat. Isso tenta criar dist\LumenPDF.exe usando PyInstaller.
+A geração do executável foi incluída como conveniência, mas não foi testada num ambiente Windows nesta entrega.
+
+Como usar as ferramentas
+------------------------
+- Realçar / Sublinhar / Tachar: escolha a ferramenta e arraste uma área sobre o texto.
+- Caneta: arraste livremente para desenhar.
+- Comentário: selecione Comentário e clique no ponto em que quer inserir a nota; depois digite o texto.
+- Selecionar texto: arraste sobre as palavras. O texto encontrado será copiado automaticamente.
+- Marcador: adiciona o título ao sumário interno do PDF, na página atual.
+- Salvar anotado: na primeira vez, escolha o local/nome do PDF de saída. O arquivo original não é sobrescrito silenciosamente.
+- Exportar texto/relatório: use o menu Arquivo.
+
+Atalhos
+-------
+Ctrl+O abrir; Ctrl+S salvar; Ctrl+F buscar; Ctrl+Z desfazer última marcação;
+setas esquerda/direita e Page Up/Page Down navegar; Ctrl+mais/menos e Ctrl+roda do mouse controlar zoom.
+
+Notas / limitações
+------------------
+- Para PDFs escaneados como imagens, não haverá texto pesquisável/copiável a menos que o documento já tenha OCR. O aplicativo não realiza OCR.
+- A marcação por arrasto é uma área livre. Ela não tenta inferir a linha exata de texto; ajuste o retângulo visualmente.
+- PDFs com senha são aceitos quando a senha é conhecida.
+- Regravar um PDF pode invalidar uma assinatura digital existente. Mantenha uma cópia original de documentos assinados.
+- O projeto é entregue em código-fonte; não há um .exe Windows pré-compilado nesta pasta.
